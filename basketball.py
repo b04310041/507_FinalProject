@@ -7,7 +7,7 @@ from datetime import datetime
 import time
 
 from prettytable import PrettyTable
-
+from final_tree import tree_reader
 
 #################################################### CACHE ###################################################
 ##############################################################################################################
@@ -405,7 +405,11 @@ allsite = {'Taipei': cache_spot(url_Taipei),
 ##############################################################################################################
 
 while True:
-    date = input("What date do you want to watch a baseball game? (MM/DD)(To finish searching pleas enter 'end')")
+    #date = input("What date do you want to watch a baseball game? (MM/DD)(To finish searching pleas enter 'end')")
+    date = tree_reader()
+    if (date == 'n') or (date == 'no'):
+        print('Bye')
+        sys.exit(0)
     if (date in dict_date_game) == True: 
         outcome_dict = dict_date_game[date]
         l = len(outcome_dict['time']) # how many games at that day
