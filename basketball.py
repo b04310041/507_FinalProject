@@ -154,13 +154,11 @@ def game_info(url):
 
 
 
-################################################# SCRAPE SPOTS ###############################################
+######################################### SCRAPE TOURIST SPOTS ###############################################
 ##############################################################################################################
 
 
 
-
-###CPBL 比賽場館鄰近景點
 
 def cache_spot(url):
     """
@@ -226,7 +224,7 @@ def get_place_result(address):
 def get_all_restaurant_with_rating__ratingNumber_address(places_result):
 
     # print(get_all_restaurant_with_rating__ratingNumber_address(places_result)[19])
-    # ['銀座杏子日式豬排-桃園環球A19店', 4, 340, '中壢區高鐵南路二段352號3樓']
+    # ['name', 4, 340, 'address']
     
     all = []
     for i in range(len(places_result["results"])):
@@ -419,19 +417,12 @@ while True:
     else:
         print("No game at that date or wrong format.")
 
-#add = address[city]
-#places_result = get_place_result(add)
-
-#all = get_all_restaurant_with_rating__ratingNumber_address(places_result)
-
-#top_5_restaurant = get_top_5_restaurant(all)
 
 city_list = []
 address_list = []
 for i in outcome_dict['city']:
     address_list.append(address[city[i]])
     city_list.append(city[i])
-    #places_result = get_place_result(add)
 #print(address_list)
 
 list_top_5 = []
@@ -441,11 +432,8 @@ for add in address_list:
     top_5_restaurant = get_top_5_restaurant(all)
     list_top_5.append(top_5_restaurant)
 
-#print(top_5_res_list) #
-#print(city_list) #
-
-
-
+#print(top_5_res_list) 
+#print(city_list) 
 
 printout(date)
 

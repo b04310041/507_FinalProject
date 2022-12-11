@@ -62,7 +62,7 @@ def yes_no(ans):
 def Play(tree):
     """DOCSTRING!"""
     if isLeaf(tree):  # is leaf
-        ans = input('What date do you want to go to the game? ')
+        ans = input('What date do you want to go to the game? (MM/DD)')
         return ans
     else:
         # tree = unit_tree(tree)
